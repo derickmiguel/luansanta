@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escolha Sim ou Não</title>
+<style>
+  #botaoNao {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+</head>
+<body>
+
+<h2>Você quer ir para o YouTube?</h2>
+<select id="escolha" onchange="checkOption()">
+  <option value="nao">Não</option>
+  <option value="sim">Sim</option>
+</select>
+
+<button id="botaoNao" onclick="moveButton()">Não</button>
+
+<script>
+function moveButton() {
+  var button = document.getElementById("botaoNao");
+  button.style.top = Math.random() * 100 + "%";
+  button.style.left = Math.random() * 100 + "%";
+}
+
+function checkOption() {
+  var escolha = document.getElementById("escolha").value;
+  if (escolha === "nao") {
+    moveButton();
+  } else {
+    window.location.href = "https://youtu.be/rTsbSY04s1Y?si=k_q6SMzAU2AvJfLp"; // Redireciona para o YouTube
+  }
+}
+</script>
+
+</body>
+</html>
